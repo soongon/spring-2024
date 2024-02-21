@@ -3,4 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.re.kitri.hello.repository.ArticleRepository">
+    <select id="selectAllArticles" resultType="kr.re.kitri.hello.model.Article">
+        SELECT  id          as id,
+                author      as author,
+                content     as content,
+                image_url   as imageUrl,
+                created_at  as createdAt,
+                likes       as likes
+        FROM    article_001
+    </select>
 </mapper>
