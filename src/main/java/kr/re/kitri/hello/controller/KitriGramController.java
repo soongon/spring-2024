@@ -44,7 +44,11 @@ public class KitriGramController {
         articleService.registArticle(article);
     }
 
-    // 글 수정
+    // 글 수정   PUT :: /articles
+    @PutMapping("/articles")
+    public void updateArticle(@RequestBody Article article) {
+        articleService.updateArticle(article);
+    }
 
     // 글 삭제
 

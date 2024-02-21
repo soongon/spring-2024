@@ -17,4 +17,5 @@ public interface ArticleRepository {
     Article selectArticleByArticleId(Long id);
     void insertArticle(Article article);
     void increaseLikes();
+    void updateArticle(Article article);
 }

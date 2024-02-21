@@ -29,4 +29,12 @@
         insert into article_001 (id, author, content, image_url, created_at, likes)
         values (#{id}, #{author}, #{content}, #{imageUrl}, now(), 0)
     </insert>
+    <update id="updateArticle"
+            parameterType="kr.re.kitri.hello.model.Article">
+        update  article_001
+        set     author      = #{author},
+                content     = #{content},
+                image_url   = #{imageUrl}
+        where   id          = #{id};
+    </update>
 </mapper>
