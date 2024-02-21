@@ -37,4 +37,9 @@
                 image_url   = #{imageUrl}
         where   id          = #{id};
     </update>
+    <delete id="deleteArticle" parameterType="java.lang.Long">
+        delete
+        from    article_001
+        where   id = #{id}
+    </delete>
 </mapper>

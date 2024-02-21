@@ -50,6 +50,10 @@ public class KitriGramController {
         articleService.updateArticle(article);
     }
 
-    // 글 삭제
+    // 글 삭제   DELETE :: /articles/{articleId}
+    @DeleteMapping("/articles/{articleId}")
+    public void removeArticle(@PathVariable Long articleId) {
+        articleService.removeArticle(articleId);
+    }
 
 }

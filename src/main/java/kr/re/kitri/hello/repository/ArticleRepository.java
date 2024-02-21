@@ -18,4 +18,5 @@ public interface ArticleRepository {
     void insertArticle(Article article);
     void increaseLikes();
     void updateArticle(Article article);
+    void deleteArticle(Long id);
 }
