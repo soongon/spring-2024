@@ -12,4 +12,21 @@
                 likes       as likes
         FROM    article_001
     </select>
+    <select id="selectArticleByArticleId"
+            parameterType="java.lang.Long"
+            resultType="kr.re.kitri.hello.model.Article">
+        select  id          as id,
+                author      as author,
+                content     as content,
+                image_url   as imageUrl,
+                created_at  as createdAt,
+                likes       as likes
+        from    article_001
+        where   id = #{id}
+    </select>
+    <insert id="insertArticle"
+            parameterType="kr.re.kitri.hello.model.Article">
+        insert into article_001 (id, author, content, image_url, created_at, likes)
+        values (#{id}, #{author}, #{content}, #{imageUrl}, now(), 0)
+    </insert>
 </mapper>
