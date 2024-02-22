@@ -27,7 +27,6 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Article> getAllArticles() {
         // 실제 repository의 DB조회하는 함수를 호출하여 기능을 수행한다.
-        log.debug("getAllArticles 호출됨");
         return articleRepository.selectAllArticles();
     }
 
