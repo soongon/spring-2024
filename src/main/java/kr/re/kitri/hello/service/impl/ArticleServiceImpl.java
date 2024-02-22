@@ -3,12 +3,19 @@ package kr.re.kitri.hello.service.impl;
 import kr.re.kitri.hello.model.Article;
 import kr.re.kitri.hello.repository.ArticleRepository;
 import kr.re.kitri.hello.service.ArticleService;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 public class ArticleServiceImpl implements ArticleService {
+
+//    private static final Logger logger =
+//            LoggerFactory.getLogger(ArticleServiceImpl.class);
 
     private final ArticleRepository articleRepository;
 
@@ -20,6 +27,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Article> getAllArticles() {
         // 실제 repository의 DB조회하는 함수를 호출하여 기능을 수행한다.
+        log.debug("getAllArticles 호출됨");
         return articleRepository.selectAllArticles();
     }
 

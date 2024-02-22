@@ -3,6 +3,7 @@ package kr.re.kitri.hello.controller;
 import kr.re.kitri.hello.model.Article;
 import kr.re.kitri.hello.service.ArticleService;
 import kr.re.kitri.hello.service.impl.ArticleServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.RequestEntity;
@@ -13,10 +14,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+@Slf4j
 public class KitriGramController {
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(KitriGramController.class);
+//    private static final Logger logger =
+//            LoggerFactory.getLogger(KitriGramController.class);
 
     private final ArticleService articleService;
 
@@ -28,7 +30,7 @@ public class KitriGramController {
     @GetMapping("/articles")
     public ResponseEntity<List<Article>> articleList() {
 
-        logger.debug("전체보기 컨트롤러 함수 시작..");
+        log.debug("전체보기 컨트롤러 함수 시작..");
 
         // 전체글을 조회해서 가져온다...
         // 서비스의 기능을 사용해서 전체글을 조회해서 가져온다.
